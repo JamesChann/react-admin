@@ -1,0 +1,27 @@
+.total-data {
+  margin-top: 30px;
+}
+
+.color-box {
+  display: block;
+  height: 160px;
+  text-align: center;
+  padding: 20px 0;
+  transition: all .3s;
+  opacity: .9;
+  &:hover {
+    text-decoration: none;
+    color: #555;
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .count {
+    font-size: 50px;
+  }
+  .desc {
+    font-size: 18px;
+    .fa {
+      margin-right: 5px;
+    }
+  }
+}

@@ -6,6 +6,8 @@ import Layout from 'component/layout/index.jsx'
 // 页面
 import Login from 'page/login/index.jsx'
 import Home from 'page/home/index.jsx'
+import UserList from 'page/userlist/index.jsx'
+import Err from 'page/error/index.jsx'
 
 class App extends React.Component {
   render() {
@@ -17,7 +19,8 @@ class App extends React.Component {
             <Layout>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Redirect from="*" to="/" />
+                <Route exact path="/user" component={UserList} />
+                <Route component={Err} />
               </Switch>
             </Layout>
           )}

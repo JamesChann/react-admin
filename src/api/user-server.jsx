@@ -13,11 +13,23 @@ class User {
   }
   // 退出登录
   logout() {
-      return _mm.request({
-          type: 'post',
-          url: '/user/logout.do'
-      })
+    return _mm.request({
+      type: 'post',
+      url: '/user/logout.do'
+    })
   }
+
+  // 得到用户信息，根据分页
+  getUserList(pageNum) {
+    return _mm.request({
+      type: 'post',
+      url: '/manage/user/list.do',
+      data: {
+        pageNum: pageNum
+      }
+    })
+  }
+
   // 检查登录接口的数据是不是合法
   checkLoginInfo(loginInfo){
     let username = $.trim(loginInfo.username),
