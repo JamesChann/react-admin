@@ -40,6 +40,11 @@ class MUtil {
     return result ? decodeURIComponent(result[2]) : null;
   }
 
+  // 成功提示
+  successTips(succMsg) {
+    alert('操作成功！')
+  }
+
   // 错误提示
   errorTips(errMsg) {
     alert(errMsg || '出了错误！')

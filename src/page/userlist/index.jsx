@@ -2,6 +2,7 @@ import React from 'react'
 import PageTitle from 'component/page-title/index.jsx'
 import { Link } from 'react-router-dom'
 import Pagination from 'util/pagination/index.jsx'
+import TableList from 'util/table-list/index.jsx'
 import MUtil from 'util/mm.jsx'
 import User from 'api/user-server.jsx'
 
@@ -47,11 +48,27 @@ class UserList extends React.Component {
   }
 
   render() {
+    let tableHeaderList = ['ID', '用户名', '邮箱', '电话', '注册时间']
     return (
       <div id="page-wrapper">
         <div id="page-inner">
           <PageTitle title="用户列表"/>
-          <div className="row">
+          <TableList tableHeader={tableHeaderList} tableBodyList={this.state.list}>
+            {
+              this.state.list.map((user, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{user.id}</td>
+                    <td>{user.username}</td>
+                    <td>{user.email}</td>
+                    <td>{user.phone}</td>
+                    <td>{new Date(user.createTime).toLocaleString()}</td>
+                  </tr>
+                )
+              })
+            }
+          </TableList>
+          {/* <div className="row">
             <div className="col-md-12">
               <table className="table table-striped table-bordered">
                 <thead>
@@ -85,7 +102,7 @@ class UserList extends React.Component {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div> */}
           <Pagination current={this.state.pageNum} 
                       total={this.state.total} 
                       onChange={(pageNum) => this.onJumpPage(pageNum)}
