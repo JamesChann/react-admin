@@ -1,0 +1,35 @@
+#save-price {
+  padding-left: 15px;
+}
+
+.save-img-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  .save-img-cont {
+    width: 100%;
+    height: 100%;
+  }
+  .save-img-delete {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    font-size: 50px;
+    cursor: pointer;
+    color: transparent;
+    background: transparent;
+  }
+  .save-img-delete:hover {
+    color: #aaa;
+    background: rgba(0, 0, 0, .2);
+  }
+}

@@ -90,7 +90,14 @@ class ProductList extends React.Component {
     return (
       <div id="page-wrapper">
         <div id="page-inner">
-          <PageTitle title="商品列表"/>
+          <PageTitle title="商品列表">
+            <Link to="/product/save" className="savebtn-wrapper">
+              <button className="btn btn-primary">
+                <i className="fa fa-plus"></i>
+                <span>添加商品</span>
+              </button>
+            </Link>
+          </PageTitle>
           <SearchList onSearchList={(productType, productValue)=> {this.onSearchProList(productType, productValue)}} />
           <TableList tableHeader={tableHeaderList} tableBodyList={this.state.list}>
             {
