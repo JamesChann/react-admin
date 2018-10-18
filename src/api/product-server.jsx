@@ -3,6 +3,18 @@ import MUtil from 'util/mm.jsx'
 const _mm = new MUtil()
 
 class Product {
+  // 得到商品信息，根据产品id
+  getProductIdInfo(productId) {
+    return _mm.request({
+      type: 'post',
+      url: '/manage/product/detail.do',
+      data: {
+        productId: productId
+      }
+    })
+  }
+
+
   // 得到商品信息，根据分页
   getProductList(params) {
     let url = ''

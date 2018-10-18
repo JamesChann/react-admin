@@ -119,8 +119,8 @@ class ProductList extends React.Component {
                       </button>
                     </td>
                     <td>
-                      <Link className="operation" to={`product/save/${product.id}`}>编辑</Link>
-                      <Link className="operation" to={`product/detail/${product.id}`}>详情</Link>
+                      <Link className="operation" to={`/product/save/${product.id}`}>编辑</Link>
+                      <Link className="operation" to={`/product/detail/${product.id}`}>详情</Link>
                     </td>
                   </tr>
                 )

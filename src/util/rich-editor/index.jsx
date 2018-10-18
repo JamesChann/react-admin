@@ -28,6 +28,12 @@ class RichEditor extends React.Component{
     this.bindEditorEvent()
   }
 
+  componentWillReceiveProps(nextProps){
+    if(this.props.defaultDetail !== nextProps.defaultDetail){
+        this.simditor.setValue(nextProps.defaultDetail);
+    }
+  }
+
   // 初始化富文本编辑器的事件
   bindEditorEvent() {
     this.simditor.on('valuechanged', e => {
